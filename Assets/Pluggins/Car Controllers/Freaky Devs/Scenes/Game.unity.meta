@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 555beb69e041f084b81088524c5ddf70
+guid: b937cf9c3c4aefc4f8bf0aa0de79e44d
 DefaultImporter:
   externalObjects: {}
   userData: 
@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 292566
   packageName: Car Controller for mobile and PC
   packageVersion: 1.0
-  assetPath: Assets/CarController/Scenes/Game.unity
+  assetPath: Assets/Pluggins/Car Controllers/Freaky Devs/Scenes/Game.unity
   uploadId: 685268
