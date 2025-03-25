@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ba4c963a5854a1d47b1ad1448447bfba
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292566
+  packageName: Car Controller for mobile and PC
+  packageVersion: 1.0
+  assetPath: Assets/CarController/Terrain/New Terrain 4.asset
+  uploadId: 685268

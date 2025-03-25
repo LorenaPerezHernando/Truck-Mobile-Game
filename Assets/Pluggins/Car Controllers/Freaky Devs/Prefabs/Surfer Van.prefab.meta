@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d5bb08df7706f4724a2d2fbb289b847f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292566
+  packageName: Car Controller for mobile and PC
+  packageVersion: 1.0
+  assetPath: Assets/CarController/Prefabs/Surfer Van.prefab
+  uploadId: 685268

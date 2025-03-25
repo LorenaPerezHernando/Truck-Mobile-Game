@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a812e7c9846e95f4a8c57ef83d89ecdf
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292566
+  packageName: Car Controller for mobile and PC
+  packageVersion: 1.0
+  assetPath: Assets/CarController/Third-Party Notices.txt
+  uploadId: 685268

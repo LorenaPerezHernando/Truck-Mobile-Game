@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ed13b4bbf985b4b2f9df994790c21b51
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292566
+  packageName: Car Controller for mobile and PC
+  packageVersion: 1.0
+  assetPath: Assets/CarController/Materials/texSurferVan.mat
+  uploadId: 685268

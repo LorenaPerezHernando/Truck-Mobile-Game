@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 25bb9d85671cfcf4ea88f4da0a7d42aa
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292566
+  packageName: Car Controller for mobile and PC
+  packageVersion: 1.0
+  assetPath: Assets/CarController/Scripts/CarController.cs
+  uploadId: 685268

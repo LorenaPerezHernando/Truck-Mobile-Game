@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 555beb69e041f084b81088524c5ddf70
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 292566
+  packageName: Car Controller for mobile and PC
+  packageVersion: 1.0
+  assetPath: Assets/CarController/Scenes/Game.unity
+  uploadId: 685268
