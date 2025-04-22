@@ -9,10 +9,10 @@ public class FactoryRefill : MonoBehaviour
     #region Fields
     [Header("Product")]
     [SerializeField] private bool _refilled = false; 
-    [SerializeField] private string[] _prefabProducts;
 
-    [Header("UI")]
+    [Header("UI Product")]
     [SerializeField] private Slider _sliderRetail;
+    [SerializeField] private Image _uiSelectedProduct;
 
     [Header("Parking")]
     [SerializeField] Renderer _parkingZone;
@@ -21,6 +21,7 @@ public class FactoryRefill : MonoBehaviour
     private void Awake()
     {
         _parkingZone = GetComponentInChildren<Renderer>();
+        _uiSelectedProduct.enabled = false; 
     }
     #region Parking
     private void OnTriggerStay(Collider other)
@@ -35,6 +36,8 @@ public class FactoryRefill : MonoBehaviour
         {
             _refilled = true;
             _parkingZone.material.color = Color.yellow;
+            _uiSelectedProduct.enabled = true;
+
         }
     }
     private void OnTriggerExit(Collider other)
