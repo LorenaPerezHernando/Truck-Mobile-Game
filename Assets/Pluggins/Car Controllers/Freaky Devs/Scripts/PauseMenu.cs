@@ -42,7 +42,7 @@ namespace GameMenu
 
         private void PauseAllAudio()
         {
-            // Update audio sources every time pause is called
+            // Update audio sources every time pause is called      
             audioSources = FindObjectsOfType<AudioSource>();
             foreach (AudioSource audio in audioSources)
             {
