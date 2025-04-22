@@ -7,15 +7,13 @@ using System.Runtime.CompilerServices;
 
 namespace Reparto.Fabrica
 {
-
-
     public class FactoryRefill : MonoBehaviour
     {
-        public int GetSelectedProduct
+        public int GetFactorySelectedProduct
         {
             get
             {
-                return _selectedProduct;
+                return _factorySelectedProduct;
             }
             private set
             {
@@ -25,43 +23,34 @@ namespace Reparto.Fabrica
         #region Fields
         [Header("Product")]
         [SerializeField] private bool _refilled = false;
-        [SerializeField] private int _selectedProduct;
+        [SerializeField] private int _factorySelectedProduct;
 
-        [Header("UI Product")]
-        [SerializeField] private Slider _sliderRetail;
-        [SerializeField] private Image _uiSelectedProduct;
+        
 
         [Header("Parking")]
         [SerializeField] Renderer _parkingZone;
         #endregion
-
+        #region Methods
         private void Awake()
         {
             _parkingZone = GetComponentInChildren<Renderer>();
-            _uiSelectedProduct.enabled = false;
+
         }
-        #region Parking
         private void OnTriggerEnter(Collider other)
         {
             if(other.gameObject.tag == "Car")
                 GameController.Instance.ActiveFactory(this);
         }
+        #region Parking
         private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.tag == "Car" && !_refilled)
             {
 
                 _parkingZone.material.color = Color.green;
-                Refill(1);
+                GameController.Instance.Refill();
             }
-            if (_sliderRetail.value >= _sliderRetail.maxValue)
-            {
-                _refilled = true;
-                _parkingZone.material.color = Color.yellow;
-                _uiSelectedProduct.enabled = true;
-                GameController.Instance.AsignProduct(_selectedProduct);
 
-            }
         }
         private void OnTriggerExit(Collider other)
         {
@@ -73,12 +62,14 @@ namespace Reparto.Fabrica
         }
 
         #endregion Parking
-        private void Refill(int refillPerSec)
+        
+        internal void FullyFilled()
         {
-            _sliderRetail.value += refillPerSec;
-            print("Refill");
+            _parkingZone.material.color = Color.yellow;
+            GameController.Instance.AsignProduct(_factorySelectedProduct);
         }
 
+        #endregion
 
     }
 }

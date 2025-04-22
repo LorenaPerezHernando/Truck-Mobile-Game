@@ -1,21 +1,65 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Reparto.Tienda
+namespace Reparto.Shop
 {
-
-
     public class ShopUnfill : MonoBehaviour
     {
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        public int GetShopSelectedProduct
         {
+            get
+            {
+                return _shopSelectedProduct;
+            }
+            private set
+            {
+            }
+        }
+        #region Fields
+        [Header("Product")]
+        [SerializeField] private bool _unfilled = false;
+        [SerializeField] private int _howManyProducts;
+        [SerializeField] private int _shopSelectedProduct;
+        [Header("Parking")]
+        [SerializeField] Renderer _parkingZone;
+        [Header("UI Product")]
+        [SerializeField] private Slider _sliderRetail;
+        [SerializeField] private Image _uiSelectedProduct;
+        #endregion
 
+        #region Methods
+        private void Awake()
+        {
+            _parkingZone = GetComponent<Renderer>();
+            //_uiSelectedProduct.enabled = false;
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.tag == "Car")
+                GameController.Instance.ActiveShop(this);
+        }
+        #region Parking
+        private void OnTriggerStay(Collider other)
+        {
+            if (other.gameObject.tag == "Car" && !_unfilled)
+            {
+                GameController.Instance.CheckShop();
+                _parkingZone.material.color = Color.green;
+            }
+            else
+                _parkingZone.material.color = Color.yellow;
+            
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.tag == "Car" && !_unfilled)
+                _parkingZone.material.color = Color.red;
+
+            else
+                _parkingZone.material.color = Color.yellow;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        #endregion Parking
+        #endregion
     }
 }

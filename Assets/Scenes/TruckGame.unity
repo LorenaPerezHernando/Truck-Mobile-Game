@@ -689,7 +689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1002289787}
+  - {fileID: 982000682}
   - {fileID: 1977905244}
   m_Father: {fileID: 50967519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -741,9 +741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _refilled: 0
-  _selectedProduct: 1
-  _sliderRetail: {fileID: 920443007}
-  _uiSelectedProduct: {fileID: 2011832132}
+  _factorySelectedProduct: 0
   _parkingZone: {fileID: 0}
 --- !u!33 &720269765
 MeshFilter:
@@ -1000,8 +998,9 @@ GameObject:
   - component: {fileID: 982000685}
   - component: {fileID: 982000684}
   - component: {fileID: 982000686}
+  - component: {fileID: 982000687}
   m_Layer: 0
-  m_Name: ModelFactoryRefill
+  m_Name: TriggerShopUnfill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1015,12 +1014,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982000681}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.82, y: -1.7, z: 7.59}
-  m_LocalScale: {x: 8.851402, y: 1.9001842, z: 18.271439}
+  m_LocalRotation: {x: 0.0000000011786633, y: 0.053928904, z: 0.000000021823906, w: 0.99854475}
+  m_LocalPosition: {x: 48.865833, y: 2.2999997, z: -15.362226}
+  m_LocalScale: {x: 8.851404, y: 1.9001842, z: 18.271442}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1002289787}
+  m_Children:
+  - {fileID: 1002289787}
+  m_Father: {fileID: 620260219}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &982000684
 MeshRenderer:
@@ -1090,12 +1090,30 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.53, y: 10.11, z: 0.71}
   m_Center: {x: 0.00000047683716, y: 0, z: -0.000000059604645}
+--- !u!114 &982000687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982000681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c517579047f9ba43a139323e3b4f212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unfilled: 0
+  _howManyProducts: 50
+  _shopSelectedProduct: 2
+  _parkingZone: {fileID: 0}
+  _sliderRetail: {fileID: 0}
+  _uiSelectedProduct: {fileID: 0}
 --- !u!4 &1002289787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
@@ -1684,9 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _refilled: 0
-  _selectedProduct: 2
-  _sliderRetail: {fileID: 920443007}
-  _uiSelectedProduct: {fileID: 502091842}
+  _factorySelectedProduct: 0
   _parkingZone: {fileID: 0}
 --- !u!1 &1731209359 stripped
 GameObject:
@@ -2247,39 +2263,51 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 620260219}
+    m_TransformParent: {fileID: 982000682}
     m_Modifications:
     - target: {fileID: 100000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_Name
       value: Building_Auto Service
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05473021
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5262648
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11297642
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.5
+      value: 0.85749114
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 0.89465
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -15.364444
+      value: 0.044878826
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7442113
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000016265274
+      value: -6.6613387e-16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6679443
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000014598392
+      value: -1.7208458e-15
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2295,10 +2323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 400000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 982000682}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
       insertIndex: -1
@@ -2333,9 +2358,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84983f4701dc783408c433a93eead916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _productSelected: {fileID: 6220442760915165165}
-  _factoryRefill: {fileID: 0}
-  _shopUnfill: {fileID: 0}
+  _car: {fileID: 6220442760915165165}
+  _factory: {fileID: 0}
+  _shop: {fileID: 0}
+  _ui: {fileID: 8306383087887257349}
 --- !u!4 &2109268516
 Transform:
   m_ObjectHideFlags: 0
@@ -2622,7 +2648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8921811698389068420, guid: 8c604809a681da54c8d9e59f5de62402, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.33
+      value: -28.4
       objectReference: {fileID: 0}
     - target: {fileID: 8921811698389068420, guid: 8c604809a681da54c8d9e59f5de62402, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3769,12 +3795,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3594522917544029032}
+  - component: {fileID: 8306383087887257349}
   - component: {fileID: 8306383087887257348}
   - component: {fileID: 7736948500507965409}
   - component: {fileID: 679091935744411872}
   - component: {fileID: 7806755689694737990}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4031,7 +4058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6a30544aca99a4b83f9cac27920fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _productSelected: 0
+  _productInCar: 0
 --- !u!1 &6254018121021367710
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,7 +4476,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 6220442760915165160}
           m_TargetAssemblyTypeName: CarContollingScripts.CarController, Assembly-CSharp
-          m_MethodName: MoveInput
+          m_MethodName: SteerInput
           m_Mode: 4
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4849,6 +4876,24 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &8306383087887257349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5586511818688655727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3b5b75fc90cbf14bbda5b0ca15991f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderRetail: {fileID: 920443007}
+  _uiSelectedProduct:
+  - {fileID: 2011832132}
+  - {fileID: 502091842}
+  _carSelectedProduct: 0
+  _refilled: 0
 --- !u!1 &8332231373614562642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5112,6 +5157,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 7889951590971005075}
+  - {fileID: 2109268516}
   - {fileID: 1771098863}
   - {fileID: 1498160223}
   - {fileID: 1350415745283233424}
@@ -5122,4 +5168,3 @@ SceneRoots:
   - {fileID: 580275230}
   - {fileID: 1991622434}
   - {fileID: 192374683}
-  - {fileID: 2109268516}
